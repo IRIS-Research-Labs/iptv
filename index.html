@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IRIS Reaserch Labs IPTV Platform</title>
+  </head>
+  <body>
+    <header>
+      <h1>Αυτή είναι η πλατφόρμα IPTV του εργαστηρίου μας.</h1>
+    </header>
+    <main>
+      <h2>Διαλέξτε κανάλι:</h2>
+      <select id="menu">
+        <option value="">--Select a Link--</option>
+        <option value="link1">ERT 1</option>
+        <option value="link2">ERT 2</option>
+        <option value="link3">ERT 3</option>
+        <option value="link4">MEGA</option>
+        <option value="link5">SKAI</option>
+      </select>
+      <br><br>
+      <div id="link-container">
+        <p>Selected link will be displayed here.</p>
+      </div>
+    </main>
+    <script>
+      // Define the links and their corresponding URLs
+      const links = {
+        link1: 'https://example.com/link1',
+        link2: 'https://example.com/link2',
+        link3: 'https://example.com/link3',
+        link4: 'https://example.com/link4',
+        link5: 'https://example.com/link5'
+      };
+
+      // Get the dropdown menu and link container
+      const menu = document.getElementById('menu');
+      const linkContainer = document.getElementById('link-container');
+
+      // Listen for changes to the dropdown menu and update the link container accordingly
+      menu.addEventListener('change', () => {
+        const selectedValue = menu.value;
+        if (selectedValue) {
+          const link = links[selectedValue];
+          const linkElement = document.createElement('a');
+          linkElement.setAttribute('href', link);
+          linkElement.textContent = link;
+          linkContainer.innerHTML = '';
+          linkContainer.appendChild(linkElement);
+        } else {
+          linkContainer.innerHTML = '<p>Selected link will be displayed here.</p>';
+        }
+      });
+    </script>
+  </body>
+</html>
