@@ -1,1 +1,1 @@
-This platform is in BETA. We might add channels like COSMOTE TV or NOVASPORTS
+Source code: https://github.com/IRIS-Research-Labs/iptv
