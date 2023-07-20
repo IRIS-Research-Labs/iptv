@@ -1,1 +1,38 @@
-Για να συνεχίσετε να βλέπετε το ONE Channel επισκεφτείτε <a href="https://www.twitch.tv/onechanneltv">το νέο τους live στο Twitch</a>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ONE Channel</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #player {
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-js {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet">
+    <script src="https://vjs.zencdn.net/7.15.4/video.js"></script>
+</head>
+<body>
+    <div id="player">
+        <video id="video-player" class="video-js vjs-default-skin vjs-big-play-centered" playsinline controls autoplay>
+            <source src="onechannel.m3u8" type="application/x-mpegURL">
+        </video>
+    </div>
+
+    <script>
+        var player = videojs('video-player');
+    </script>
+</body>
+</html>
