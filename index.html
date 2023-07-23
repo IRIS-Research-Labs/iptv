@@ -1,110 +1,232 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title> IRIS Research Labs IPTV Server </title>
+<head>
+    <title>IRIS Research Labs IPTV Server</title>
     <style>
-      
-      body{margin:0;background-color:turquoise}.announcements{margin-bottom:10px;font-size:20px;background-color:#7b7d7d;color:#fff;padding:10px;border-radius:20px;width:80%;display:inline-block}.announcements>p>a{text-decoration:none;color:red}.dropbtn{background-color:red;color:#fff;padding:15px;font-size:15px;border:none}.dropdown{position:relative;display:inline-block;margin-bottom:5px}.dropdown-content{display:none;position:absolute;background-color:#f1f1f1;min-width:140px;box-shadow:0 8px 16px 0 rgba(0,0,0,.2);z-index:1}.dropdown-content a{color:#000;padding:1px;text-decoration:none;display:block}.dropdown-content a:hover{background-color:#ddd}.dropdown:hover .dropdown-content{display:block}.dropdown:hover .dropbtn{background-color:#00008b}.menu{margin-bottom:15px;margin-top:15px;display:inline-block}.clock{margin-bottom:10px}.dropbtn>a{text-decoration:none;color:#40e0d0}.title{font-weight:1000;font-family:Arial}.color1{color:red}.color2{color:#ff0}.color3{color:green}.menu{margin-bottom:15px;margin-top:15px;display:inline-block}.linksr>p{margin-bottom:10px;margin-top:10px;display:inline-block}.links>a{text-decoration:none;color:blue;font-size:20px;font-weight:700;display:inline-block;margin-bottom:11px}.links>a>p{margin:0}p{margin:0}.linksr{font-size:20px;font-weight:700;color:#fff}.title{margin-top:10px;font-size:32px;font-weight:700;color:red;display:inline-block;margin-bottom:10px}.buttons{margin-bottom:10px}.button1,.button2,.button3{background-color:#000;width:100px;padding:9px;border-radius:25px;display:inline-block;margin-bottom:5px}.btn>a{color:#fff;text-decoration:none;font-size:12px}.btn1{margin-bottom:10px;cursor:pointer;padding:10px;background-color:red;color:#fff;font-weight:700;border-style:none;border-radius:10px;.player{margin-bottom:20px}.player>iframe{border-color:#000}form{margin:0;display:inline-block}input{color:#fff;background-color:red;border-style:none;margin-left:5px;cursor:pointer;border-radius:5px;font-size:15px}
-/*
-      
+        body {
+            margin: 0;
+            background-color: lime; /* Lime background for the whole webpage */
+            font-family: Times New Roman, serif; /* Times New Roman font */
+        }
+
+        /* Existing styles */
+        /* ... */
+
+        /* Styles for the round buttons */
+        .round-btn {
+            background-color: red;
+            padding: 15px;
+            font-size: 15px;
+            border: none;
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 140px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #000;
+            padding: 1px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Styles for the new announcements block */
+        .announcements {
+            background-color: darkgreen; /* Dark green background */
+            padding: 10px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            max-width: 70%; /* Adjust the width as needed */
+            font-size: 114%; /* Increase font size by 14% */
+        }
+
+        /* Styles for the new player window */
+        .player {
+            margin-bottom: 20px;
+            height: 15.21cm; /* 11.7cm + 30% (3.51cm) = 15.21cm */
+            width: 75%; /* Decrease width by 25% */
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+        }
+
+        .modal-content {
+            background-color: grey; /* Grey background for the rest of the modal */
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 60%; /* Adjust the width as needed */
+            border-radius: 10px;
+        }
+
+        /* Animate the X in the modal window */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s; /* Added transition property for smooth animation */
+        }
+
+        .close:hover {
+            color: black;
+        }
+
+        /* Slightly smaller and color-changing title */
+        .title {
+            font-size: 30px; /* Slightly smaller font size */
+            font-weight: bold;
+            animation: title-color-change 4s infinite;
+            margin: 0; /* Remove excess space from top and bottom */
+        }
+
+        /* Animation keyframes for the title */
+        @keyframes title-color-change {
+            0% { color: red; }
+            33% { color: blue; }
+            66% { color: green; }
+            100% { color: red; }
+        }
     </style>
-    
-    
-    
-        </head>
-  <body>
-    
+</head>
+<body>
     <center>
-   <main>
-<div class="title"> <p> IRIS Research Labs IPTV Server </p> </div>
-<div class="clock">
-<iframe src="https://free.timeanddate.com/clock/i8c48c0b/n26/tlgr17/fs18/tc808080/ftb/tt0/tw0/tm2" frameborder="0" width="204" height="23"></iframe>
-</div>
+        <main>
+            <div class="title">
+                <p>IRIS Research Labs IPTV Server</p>
+            </div>
+            <div class="clock">
+                <iframe src="https://free.timeanddate.com/clock/i8c48c0b/n26/tlgr17/fs18/tc808080/ftb/tt0/tw0/tm2" frameborder="0" width="204" height="23"></iframe>
+            </div>
 
-<div class="announcements"> 
-<span class="color4" style="font-size:25px"> Made by <a href="https://www.instagram.com/general_basilesanast1/">@general_basilesanast1</a> and <a href="https://www.instagram.com/stavroga2/">@stavroga2</a> </span>
-<p> <span class="color2"> Απαγορεύεται η οποιαδήποτε αντιγραφή της σελίδας με οποιονδήποτε τρόπο. </span> </p>  
-</div>
+            <!-- New Announcements Block -->
+            <div class="announcements">
+                <span class="color4" style="font-size: 28px">Made by <a href="https://www.instagram.com/general_basilesanast1/">@general_basilesanast1</a> and <a href="https://www.instagram.com/stavroga2/">@stavroga2</a></span>
+                <p><span class="color2" style="font-size: 18px"Απαγορεύεται η οποιαδήποτε αντιγραφή της σελίδας με οποιονδήποτε τρόπο.</span></p>
+            </div>
 
-<div class="streams1">
-<center>
-<div class="menu">
-<div class="dropdown">
-<button class="dropbtn">Watch</button>
-<div class="dropdown-content">
-<a href="greekchannels/readme.txt" target="streams">CHANGELOG</a>
-<div class="dropdown-content">
-<a href="greekchannels/vouli.html" target="streams">Βουλή των Ελλήνων</a>
-<div class="dropdown-content">
-<a href="greekchannels/ert1.html" target="streams">ERT 1</a>
-<div class="dropdown-content">
-<a href="greekchannels/ert2.html" target="streams">ERT 2</a>
-<div class="dropdown-content">
-<a href="greekchannels/ert3.html" target="streams">ERT 3</a>
-<div class="dropdown-content">
-<a href="greekchannels/ertsports1.html" target="streams">ERT Sports 1</a>
-<div class="dropdown-content">
-<a href="greekchannels/ertsports2.html" target="streams">ERT Sports 2</a>
-<div class="dropdown-content">
-<a href="greekchannels/ertworld.html" target="streams">ERT World</a>
-<div class="dropdown-content">
-<a href="greekchannels/ertnews.html" target="streams">ERT News</a>
-<div class="dropdown-content">
-<a href="greekchannels/alpha.html" target="streams">Alpha</a>
-<div class="dropdown-content">
-<a href="greekchannels/action24.html" target="streams">Action 24</a>
-<div class="dropdown-content">
-<a href="greekchannels/ionian.html" target="streams">IONIAN</a>
-<div class="dropdown-content">
-<a href="greekchannels/kontra.html" target="streams">Kontra</a>
-<div class="dropdown-content">
-<a href="greekchannels/mega.html" target="streams">MEGA</a>
-<div class="dropdown-content">
-<a href="greekchannels/star.html" target="streams">STAR</a>
-<div class="dropdown-content">
-<a href="greekchannels/ant1.html" target="streams">ANT1</a>
-<div class="dropdown-content">
-<a href="greekchannels/ant1comedy.html" target="streams">ANT1+ Comedy</a>
-<div class="dropdown-content">
-<a href="greekchannels/ant1drama.html" target="streams">ANT1+ Drama</a>
-<div class="dropdown-content">
-<a href="greekchannels/ant1f1.html" target="streams">ANT1+ F1</a>
-<div class="dropdown-content">  
-<a href="greekchannels/ant1music.html" target="streams">ANT1+ Just Music</a>
-<div class="dropdown-content">
-<a href="greekchannels/makedonia.html" target="streams">MAKEDONIA</a>
-<div class="dropdown-content">  
-<a href="greekchannels/one.html" target="streams">ONE Channel</a>
-<div class="dropdown-content">
-<a href="greekchannels/open.html" target="streams">OPEN BEYOND</a>
-<div class="dropdown-content">
-<a href="greekchannels/skai.html" target="streams">SKAI</a>
-<div class="dropdown-content">
-<a href="greekchannels/smile.html" target="streams">SMILE TV</a>
-<div class="dropdown-content">
-<a href="nongreekchannels/tv5monde.html" target="streams">TV5 Monde</a>
-<div class="dropdown-content">  
-<a href="nongreekchannels/classiccinema.html" target="streams">Classic Cinema US</a>
-<div class="dropdown-content">
-<a href="nongreekchannels/racing.com.html" target="streams">Racing.com AU</a>
-<div class="dropdown-content">
-<a href="nongreekchannels/failarmy.html" target="streams">FailArmy</a>
-<div class="dropdown-content">
-<a href="nongreekchannels/skynewsextra1.html" target="streams">Sky News EXTRA 1</a>  
-</div>
-</div>
+            <div class="streams1">
+                <center>
+                    <div class="menu">
+                        <div class="dropdown">
+                            <button class="round-btn">Ελληνικά κανάλια</button>
+                            <div class="dropdown-content">
+                                <!-- Dropdown content for Watch button -->
+                                <div class="dropdown-content">
+                                <a href="greekchannels/readme.txt" target="streams">CHANGELOG</a>
+                                <a href="greekchannels/vouli.html" target="streams">Βουλή των Ελλήνων</a>
+                                <a href="greekchannels/ert1.html" target="streams">ERT 1</a>
+                                <a href="greekchannels/ert2.html" target="streams">ERT 2</a>
+                                <a href="greekchannels/ert3.html" target="streams">ERT 3</a>
+                                <a href="greekchannels/ertsports1.html" target="streams">ERT Sports 1</a>
+                                <a href="greekchannels/ertsports2.html" target="streams">ERT Sports 2</a>
+                                <a href="greekchannels/ertworld.html" target="streams">ERT World</a>
+                                <a href="greekchannels/ertnews.html" target="streams">ERT News</a>
+                                <a href="greekchannels/alpha.html" target="streams">Alpha</a>
+                                <a href="greekchannels/action24.html" target="streams">Action 24</a>
+                                <a href="greekchannels/ionian.html" target="streams">IONIAN</a>
+                                <a href="greekchannels/kontra.html" target="streams">Kontra</a>
+                                <a href="greekchannels/mega.html" target="streams">MEGA</a>
+                                <a href="greekchannels/star.html" target="streams">STAR</a>
+                                <a href="greekchannels/ant1.html" target="streams">ANT1</a>
+                                <a href="greekchannels/ant1comedy.html" target="streams">ANT1+ Comedy</a>
+                                <a href="greekchannels/ant1drama.html" target="streams">ANT1+ Drama</a>
+                                <a href="greekchannels/ant1f1.html" target="streams">ANT1+ F1</a>
+                                <a href="greekchannels/ant1music.html" target="streams">ANT1+ Just Music</a>
+                                <a href="greekchannels/makedonia.html" target="streams">MAKEDONIA</a>
+                                <a href="greekchannels/one.html" target="streams">ONE Channel</a>
+                                <a href="greekchannels/open.html" target="streams">OPEN BEYOND</a>
+                                <a href="greekchannels/skai.html" target="streams">SKAI</a>
+                                <a href="greekchannels/smile.html" target="streams">SMILE TV</a>
+                                <!-- Add more dropdown content for Watch button as needed -->
+                            </div>
+                        </div>
 
+                        <!-- New round button with dropdown list -->
+                        <div class="dropdown">
+                            <button class="round-btn">Ξένα κανάλια</button>
+                            <div class="dropdown-content">
+                                <!-- Dropdown content for New Button -->
+                                <a href="nongreekchannels/tv5monde.html" target="streams">TV5 Monde</a>  
+                                <a href="nongreekchannels/classiccinema.html" target="streams">Classic Cinema US</a>
+                                <a href="nongreekchannels/racing.com.html" target="streams">Racing.com AU</a>
+                                <a href="nongreekchannels/failarmy.html" target="streams">FailArmy</a>
+                                <a href="nongreekchannels/skynewsextra1.html" target="streams">Sky News EXTRA 1</a>
+                                <!-- Add more dropdown content for New Button as needed -->
+                            </div>
+                        </div>
 
+                        <!-- Third round button to open the modal window -->
+                        <div class="dropdown">
+                            <button class="round-btn" onclick="openModal()">Ποδόσφαιρο Γυναικών</button>
+                        </div>
+                    </div>
+                </center>
+                <!-- New player window with height 15.21cm (11.7cm + 30%) and width 75% of its original width -->
+                <div class="player">
+                    <iframe allowfullscreen="true" src="javascript:void(0)" height="100%" width="100%" name="streams"></iframe>
+                </div>
+            </div>
+        </main>
+    </center>
 
+    <!-- Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h1 class="fs-5" style="color: black;">FIFA Women's World Cup 2023</h1>
+            <p style="color: black;">Δεν μπορούσα να βάλω το stream του ANT1+ γιατί προστατεύεται από βαρύ DRM. Μερικοί αγώνες είναι στο ελεύθερο ANT1
+                <!-- The rest of the content in the modal window -->
+                <br>
+                <!-- ... -->
+            </p>
+        </div>
+    </div>
 
+    <script>
+        // JavaScript to control the modal
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
 
-
-</center>
-<div class="player">
-<iframe allowfullscreen="true" src="javascript:void(0)" height="70%" width="90%" name="streams"></iframe>
-</div>
-</div>
-</main> </center>
-      
-
-  </body>
- </html>
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
