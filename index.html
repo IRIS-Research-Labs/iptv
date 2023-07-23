@@ -132,48 +132,6 @@
             </div>
             <div class="clock">
                 <iframe src="https://free.timeanddate.com/clock/i8c48c0b/n26/tlgr17/fs18/tc808080/ftb/tt0/tw0/tm2" frameborder="0" width="204" height="23"></iframe>
-                <script>
-    // disable right click
-    document.addEventListener('contextmenu', event => event.preventDefault());
-
-    document.onkeydown = function (e) {
-
-        // disable F12 key
-        if(e.keyCode == 123) {
-            return false;
-        }
-
-        // disable I key
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 73){
-            return false;
-        }
-
-        // disable J key
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-            return false;
-        }
-
-        // disable U key
-        if(e.ctrlKey && e.keyCode == 85) {
-            return false;
-        }
-    }
-
-</script>
-
-<script type="text/javascript">
-// Whenever the user starts pressing any mouse button
-document.addEventListener('mousedown', e => {
-  // Check if the click is the middle button
-  if (e.which === 2) {
-    // Do something when the user does middle click
-    alert('What you are trying to do is not allowed')
-    
-    // Prevent default middle click behaviour of the middle click
-    e.preventDefault()
-  }
-})
-</script>
             </div>
 
             <!-- New Announcements Block -->
@@ -253,50 +211,23 @@ document.addEventListener('mousedown', e => {
                         </div>
                 </center>
                 <!-- New player window with height 15.21cm (11.7cm + 30%) and width 75% of its original width -->
-                <div class="player">
+                <!-- Third round button to open the modal window -->
+                        <div class="dropdown">
+                            <button class="round-btn" onclick="openModal()">Announcements</button>
+                        </div>
+                    </div>
+                </center>
+                                    <!-- Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h1 class="fs-5" style="color: black;">ΜΗΝΥΜΑ ΓΙΑ ΤΟΥΣ ADBLOCK USERS</h1>
+            <p style="color: black;">ΟΣΟ ΒΑΖΕΤΕ ADBLOCK ΤΟ SITE ΔΕΝ ΕΧΕΙ ΕΣΟΔΑ ΚΑΙ ΔΕΝ Μ
+                <!-- The rest of the content in the modal window -->
+                <br>
+                    
+                    <div class="player">
                     <iframe allowfullscreen="true" src="javascript:void(0)" height="100%" width="100%" name="streams"></iframe>
-                    <script>
-    // disable right click
-    document.addEventListener('contextmenu', event => event.preventDefault());
-
-    document.onkeydown = function (e) {
-
-        // disable F12 key
-        if(e.keyCode == 123) {
-            return false;
-        }
-
-        // disable I key
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 73){
-            return false;
-        }
-
-        // disable J key
-        if(e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-            return false;
-        }
-
-        // disable U key
-        if(e.ctrlKey && e.keyCode == 85) {
-            return false;
-        }
-    }
-
-</script>
-
-<script type="text/javascript">
-// Whenever the user starts pressing any mouse button
-document.addEventListener('mousedown', e => {
-  // Check if the click is the middle button
-  if (e.which === 2) {
-    // Do something when the user does middle click
-    alert('What you are trying to do is not allowed')
-    
-    // Prevent default middle click behaviour of the middle click
-    e.preventDefault()
-  }
-})
-</script>
                 </div>
             </div>
         </main>
