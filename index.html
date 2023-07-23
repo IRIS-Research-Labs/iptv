@@ -137,24 +137,24 @@
             <!-- New Announcements Block -->
             <div class="announcements">
                 <span class="color4" style="font-size: 28px">Made by <a href="https://www.instagram.com/general_basilesanast1/">@general_basilesanast1</a> and <a href="https://www.instagram.com/stavroga2/">@stavroga2</a></span>
-                <p><span class="color2" style="font-size: 18px"Απαγορεύεται η οποιαδήποτε αντιγραφή της σελίδας με οποιονδήποτε τρόπο.</span></p>
+                <p><span class="color2" style="font-size: 18px">Απαγορεύεται η οποιαδήποτε αντιγραφή της σελίδας με οποιονδήποτε τρόπο.</span></p>
             </div>
 
             <div class="streams1">
                 <center>
                     <div class="menu">
                         <div class="dropdown">
-                            <button class="round-btn">Ελληνικά κανάλια</button>
-                                <!-- Dropdown content for Watch button -->
+                            <button class="round-btn">Κανάλια</button>
+                            <!-- Dropdown content for Watch button -->
                                 <div class="dropdown-content">
                                 <a href="greekchannels/readme.txt" target="streams">CHANGELOG</a>
-                                <div class="dropdown-content">
+                                <div class="dropdown-content">   
                                 <a href="greekchannels/vouli.html" target="streams">Βουλή των Ελλήνων</a>
-                                <div class="dropdown-content">
+                                <div class="dropdown-content">    
                                 <a href="greekchannels/ert1.html" target="streams">ERT 1</a>
-                                <div class="dropdown-content">
+                                <div class="dropdown-content">    
                                 <a href="greekchannels/ert2.html" target="streams">ERT 2</a>
-                                <div class="dropdown-content">
+                                <div class="dropdown-content">    
                                 <a href="greekchannels/ert3.html" target="streams">ERT 3</a>
                                 <div class="dropdown-content">
                                 <a href="greekchannels/ertsports1.html" target="streams">ERT Sports 1</a>
@@ -196,13 +196,23 @@
                                 <a href="greekchannels/skai.html" target="streams">SKAI</a>
                                 <div class="dropdown-content">
                                 <a href="greekchannels/smile.html" target="streams">SMILE TV</a>
+                                <div class="dropdown-content">
+                                <a href="nongreekchannels/tv5monde.html" target="streams">TV5 Monde</a>
+                                <div class="dropdown-content">  
+                                <a href="nongreekchannels/classiccinema.html" target="streams">Classic Cinema US</a>
+                                <div class="dropdown-content">
+                                <a href="nongreekchannels/racing.com.html" target="streams">Racing.com AU</a>
+                                <div class="dropdown-content">
+                                <a href="nongreekchannels/failarmy.html" target="streams">FailArmy</a>
+                                <div class="dropdown-content">
+                                <a href="nongreekchannels/skynewsextra1.html" target="streams">Sky News EXTRA 1</a>   
                                 <!-- Add more dropdown content for Watch button as needed -->
                             </div>
                         </div>
 
-                        <!-- Third round button to open the modal window -->
+                        <!-- Second round button for "Modal Window" -->
                         <div class="dropdown">
-                            <button class="round-btn" onclick="openModal()">Ποδόσφαιρο Γυναικών</button>
+                            <button class="round-btn" onclick="openModal()">Διαβάστε</button>
                         </div>
                     </div>
                 </center>
@@ -218,8 +228,8 @@
     <div class="modal" id="myModal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <h1 class="fs-5" style="color: black;">FIFA Women's World Cup 2023</h1>
-            <p style="color: black;">Δεν μπορούσα να βάλω το stream του ANT1+ γιατί προστατεύεται από βαρύ DRM. Μερικοί αγώνες είναι στο ελεύθερο ANT1
+            <h1 class="fs-5" style="color: black;">Παράθυρο Ανακοινώσεων (BETA)</h1>
+            <p style="color: black;">Όταν βγει μια σημαντική ανακοίνωση από τους διαχειριστές, θα εμφανίζεται εδώ.
                 <!-- The rest of the content in the modal window -->
                 <br>
                 <!-- ... -->
@@ -237,5 +247,49 @@
             document.getElementById("myModal").style.display = "none";
         }
     </script>
+                                 
+    <script>
+    // disable right click
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    document.onkeydown = function (e) {
+
+        // disable F12 key
+        if(e.keyCode == 123) {
+            return false;
+        }
+
+        // disable I key
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 73){
+            return false;
+        }
+
+        // disable J key
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+            return false;
+        }
+
+        // disable U key
+        if(e.ctrlKey && e.keyCode == 85) {
+            return false;
+        }
+    }
+
+</script>
+
+<script type="text/javascript">
+// Whenever the user starts pressing any mouse button
+document.addEventListener('mousedown', e => {
+  // Check if the click is the middle button
+  if (e.which === 2) {
+    // Do something when the user does middle click
+    alert('What you are trying to do is not allowed')
+    
+    // Prevent default middle click behaviour of the middle click
+    e.preventDefault()
+  }
+})
+</script>
+
 </body>
 </html>
