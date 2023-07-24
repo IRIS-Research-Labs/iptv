@@ -11,12 +11,17 @@
 
         /* Existing styles */
         /* ... */
-
-       .menu {
-            display: flex; /* Display buttons side by side */
-            align-items: center; /* Center the buttons vertically */
-            justify-content: space-between; /* Add space between the buttons */
+        /* New styles for the menu container */
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 70%;
+            margin: 0 auto;
+            margin-top: 20px;
         }
+        
+        
         
         
         /* Styles for the round buttons */
@@ -219,12 +224,12 @@
                         </div>
                 </center>
                 
-                <!-- Third round button to open the modal window -->
+               <!-- New "Announcements" button -->
                         <div class="dropdown">
                             <button class="round-btn" onclick="openModal()">Announcements</button>
                         </div>
                     </div>
-                    </center>
+                </center>
                     <!-- New player window with height 15.21cm (11.7cm + 30%) and width 75% of its original width -->
                     <div class="player">
                     <iframe allowfullscreen="true" src="javascript:void(0)" height="100%" width="100%" name="streams"></iframe>
